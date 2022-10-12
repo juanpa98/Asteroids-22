@@ -25,11 +25,12 @@ public class Teleporter : MonoBehaviour
         }
         if (transform.position.x > limiteX)
         {
-            transform.position = new Vector3(transform.position.y, -limiteX);
+            transform.position = new Vector3(-limiteX, transform.position.y);
         }
         if (transform.position.x < -limiteX)
         {
-            transform.position = new Vector3(transform.position.y, limiteX);
+            
+            transform.position = new Vector3(limiteX, transform.position.y);
         }
 
     }
