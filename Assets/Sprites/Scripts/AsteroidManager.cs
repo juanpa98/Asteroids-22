@@ -18,7 +18,8 @@ public class AsteroidManager : MonoBehaviour
             Debug.Log("instancion del asteroides:" + i);
             Vector3 posicion = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY));
             Vector3 rotation = new Vector3(0, 0, Random.Range(0f, 360f));
-            Instantiate(asteroide, posicion, Quaternion.Euler(rotation));
+            GameObject temp = Instantiate(asteroide, posicion, Quaternion.Euler(rotation));
+            temp.GetComponent<AsteroidController>().manager = this;
         }
         
     }
@@ -28,4 +29,5 @@ public class AsteroidManager : MonoBehaviour
     {
         
     }
+  
 }

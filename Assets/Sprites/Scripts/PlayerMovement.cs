@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10;
     public float rotationSpeed = 10;
     public GameObject bala;
+    public GameObject boquilla;
     // Start is called before the first frame update
     private void Start()
     {
@@ -34,9 +35,15 @@ public class PlayerMovement : MonoBehaviour
         
         if (Input.GetButtonDown("Jump"))
         {
-            Instantiate(bala);
+            GameObject temp = Instantiate(bala, boquilla.transform.position, transform.rotation);
+            Destroy(temp, 1.5f);
 
         }
+       
         
-    } 
+    }
+    public void Muerte()
+    {
+        //Destroy(gameObject);
+    }
 }
