@@ -18,6 +18,7 @@ public class AsteroidController : MonoBehaviour
         direccion = direccion * Random.Range(speed_min, speed_max);
         Debug.Log(direccion);
         rb.AddForce(direccion);
+        manager.asteroides += 1;
     }
 
     // Update is called once per frame
@@ -39,7 +40,8 @@ public class AsteroidController : MonoBehaviour
         temp2.GetComponent<AsteroidController>().manager = manager;
         temp2.transform.localScale = transform.localScale * 0.5f;
         }
-
+        GameManager.instance.puntuacion += 50;
+        manager.asteroides -= 1;
         Destroy(gameObject);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +49,7 @@ public class AsteroidController : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerMovement>().Muerte();
-            Destroy(gameObject);
+       
         }
     }
 }

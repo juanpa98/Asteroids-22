@@ -3,7 +3,12 @@ guid: 33a7752832a4835468c344e1d5898916
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bala: {instanceID: 0}
+  - bala2: {instanceID: 0}
+  - boquilla: {instanceID: 0}
+  - boquilla2: {instanceID: 0}
+  - ParticulasMuerte: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
