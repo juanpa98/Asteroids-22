@@ -5,7 +5,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI tiempo;
-    public TextMeshProUGUI puntuacion;
+    public TextMeshProUGUI puntaje;
     public TextMeshProUGUI vidas;
     public GameObject gameOver;
 
@@ -19,10 +19,10 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         tiempo.text = Time.time.ToString("00.00");
-        if(GameManager.instance.vidas <= 0)
-        {
+         if(GameManager.instance.vidas <= 0)
+         {
             gameOver.SetActive(true);
-        }
+         }
 
     }
     

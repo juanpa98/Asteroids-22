@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject boquilla;
     public GameObject boquilla2;
     public GameObject ParticulasMuerte;
+    bool muerto;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        if(muerto)
+        { }
+        else{ 
         float vertical = Input.GetAxis("Vertical");
         if (vertical > 0)
         {
@@ -55,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+        }
 
     }
     public void Muerte()
@@ -62,11 +67,15 @@ public class PlayerMovement : MonoBehaviour
 
         GameObject temp = Instantiate(ParticulasMuerte, boquilla.transform.position, transform.rotation);
         Destroy(temp, 1.5f);
+        
+        GameManager.instance.vidas -= 1;
+        transform.position = new Vector3(0, 0, 0);
+        rb.velocity = new Vector2(0, 0);
 
         if (GameManager.instance.vidas <= 0)
         {
-
             Destroy(gameObject);
+
         }
         else
         {
@@ -78,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Respawn_Coroutine()
     {
+        muerto = true;
         collider.enabled = false;
         sprite.enabled = false;
         yield return new WaitForSeconds(1);
@@ -85,9 +95,7 @@ public class PlayerMovement : MonoBehaviour
         sprite.enabled = true;
        
         
-        GameManager.instance.vidas -= 1;
-        transform.position = new Vector3(0, 0, 0);
-        rb.velocity = new Vector2(0, 0);
+        muerto = false;
 
 
     }
