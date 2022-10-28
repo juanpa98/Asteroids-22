@@ -40,7 +40,7 @@ public class AsteroidController : MonoBehaviour
         temp2.GetComponent<AsteroidController>().manager = manager;
         temp2.transform.localScale = transform.localScale * 0.5f;
         }
-        GameManager.instance.puntuacion += 50;
+        GameManager.instance.puntuacion += 100;
         manager.asteroides -= 1;
         Destroy(gameObject);
     }

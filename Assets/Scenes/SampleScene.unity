@@ -992,9 +992,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempo: {fileID: 1143299398}
-  puntuacion: {fileID: 76727072}
+  Puntuacion: {fileID: 0}
   vidas: {fileID: 2059953008}
   gameOver: {fileID: 495958446}
+  scoreText: {fileID: 0}
 --- !u!1 &1441830086
 GameObject:
   m_ObjectHideFlags: 0

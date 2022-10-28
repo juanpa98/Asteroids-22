@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject ParticulasMuerte;
     bool muerto;
 
+   
+
 
     // Start is called before the first frame update
     private void Start()
