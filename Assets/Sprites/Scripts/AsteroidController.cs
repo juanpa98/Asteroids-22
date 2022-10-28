@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AsteroidController : MonoBehaviour
 {
+    
 
     Rigidbody2D rb;
     public float speed_min;
@@ -40,7 +42,7 @@ public class AsteroidController : MonoBehaviour
         temp2.GetComponent<AsteroidController>().manager = manager;
         temp2.transform.localScale = transform.localScale * 0.5f;
         }
-        GameManager.instance.puntuacion += 100;
+        GameManager.instance.puntuacion += 50;
         manager.asteroides -= 1;
         Destroy(gameObject);
     }

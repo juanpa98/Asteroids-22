@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
     CircleCollider2D collider;
     SpriteRenderer sprite;
-    public float speed = 10;
-    public float rotationSpeed = 10;
+    public float speed = 200;
+    public float rotationSpeed = -500;
     public GameObject bala;
     public GameObject bala2;
     public GameObject boquilla;
